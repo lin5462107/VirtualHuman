@@ -126,10 +126,10 @@ python downloading_weights.py
 ```
 
 #### Inference
-''' shell
+``` shell
 python pose_align.py --imgfn_refer ./assets/images/ref.png --vidfn ./assets/videos/dance.mp4
 python test_stage_2.py --config ./configs/test_stage_2.yaml
-'''
+``` 
 
 #### Other References
 Follow [MusePose](https://github.com/TMElyralab/MusePose.git).

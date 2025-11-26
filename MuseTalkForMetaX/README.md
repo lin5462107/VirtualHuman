@@ -132,13 +132,13 @@ sh ./download_weights.sh
 ```
 
 #### Inference
-''' shell
+``` shell
 # MuseTalk 1.5 (Recommended)
 sh inference.sh v1.5 normal
 
 # MuseTalk 1.0
 sh inference.sh v1.0 normal
-'''
+``` 
 
 #### Other References
 Follow [MuseTalk](https://github.com/TMElyralab/MuseTalk.git).

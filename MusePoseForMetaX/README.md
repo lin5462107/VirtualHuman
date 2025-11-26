@@ -131,5 +131,5 @@ python pose_align.py --imgfn_refer ./assets/images/ref.png --vidfn ./assets/vide
 python test_stage_2.py --config ./configs/test_stage_2.yaml
 ``` 
 
-#### Other References
+## Other References
 Follow [MusePose](https://github.com/TMElyralab/MusePose.git).

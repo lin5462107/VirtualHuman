@@ -100,5 +100,5 @@ bash download_model.sh
 python lite_avatar.py --data_dir /path/to/sample_data --audio_file /path/to/audio.wav --result_dir /path/to/result
 ```
 
-#### Other References
+## Other References
 Follow [lite-avatar](https://github.com/HumanAIGC/lite-avatar.git).

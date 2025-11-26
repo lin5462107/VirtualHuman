@@ -145,5 +145,5 @@ Please see the demo website for details.
 python3 webui.py --port 50000 --model_dir pretrained_models/CosyVoice-300M
 ```
 
-#### Other References
+## Other References
 Follow [CosyVoice](https://github.com/FunAudioLLM/CosyVoice.git).

@@ -140,5 +140,5 @@ sh inference.sh v1.5 normal
 sh inference.sh v1.0 normal
 ``` 
 
-#### Other References
+## Other References
 Follow [MuseTalk](https://github.com/TMElyralab/MuseTalk.git).

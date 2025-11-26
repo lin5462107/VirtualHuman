@@ -148,5 +148,5 @@ bash scripts/download_MiniCPM-o_2.6.sh
 python src/demo.py --config ./config/chat_with_minicpm.yaml
 ```
 
-#### Other Steps
+## Other References
 Follow [OpenAvatarChat](https://github.com/HumanAIGC-Engineering/OpenAvatarChat.git).

@@ -8,6 +8,7 @@ Currently, virtual humans are widely used in various industries, and the purpose
 ## Available Projects
 ### 1. [LiteAvatar for Metax GPU platform](./LiteAvatarForMetaX/README.md)
 - **[LiteAvatar](https://github.com/HumanAIGC/lite-avatar.git)** is a audio2face model for realtime 2D chat avatar, which can run in 30fps on only CPU devices without GPU acceleration.
+https://github.com/lin5462107/VirtualHuman/blob/main/imgs/lite_avartat_ori_video.mp4
 
 ### 2. [MuseTalk for Metax GPU Platform](./MuseTalkForMetaX/README.md) 
 - **[MuseTalk](https://github.com/TMElyralab/MuseTalk.git)** is a real-time high quality lip-syncing model, wich can be applied with input videos as a complete virtual human solution.

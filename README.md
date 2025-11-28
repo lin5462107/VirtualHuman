@@ -83,7 +83,7 @@ Currently, virtual humans are widely used in various industries, and the purpose
   </tr>
   <tr>
     <td >
-      <video src=https://github.com/user-attachments/assets/95efa087-c40d-492c-90ef-c06823a63092 controls preload></video>
+      <video src=https://github.com/user-attachments/assets/309de5b5-f272-47ce-a7fd-c9da0693a7fd controls preload></video>
     </td>
   </tr>
 </table >

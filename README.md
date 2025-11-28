@@ -51,15 +51,30 @@ Currently, virtual humans are widely used in various industries, and the purpose
   </tr>
   <tr>
     <td >
-      <video src= controls preload></video>
+      <video src=https://github.com/user-attachments/assets/6bc4cff4-08d9-403a-9857-739cabd7c087 controls preload></video>
+    </td>
+  </tr>
+</table >
+
+### 4. [CosyVoice for Metax GPU Platform](./CosyVoiceForMetaX/README.md)
+- **[CosyVoice](https://github.com/FunAudioLLM/CosyVoice.git)** is a powerful voice generation model, which supports multiple languages, with fast and stable generation.
+
+<table class="center">
+  <tr style="font-weight: bolder;text-align:center;">
+        <td width="50%">Input Voice</td>
+        <td width="50%">Output Voice</td>
+  </tr>
+  <tr>
+    <td >
+      <audio src= controls preload></audio>
+    </td>
+    <td >
+      <audio src= controls preload></audio>
     </td>
   </tr>
 </table >
 
 
-
-### 4. [CosyVoice for Metax GPU Platform](./CosyVoiceForMetaX/README.md)
-- **[CosyVoice](https://github.com/FunAudioLLM/CosyVoice.git)** is a powerful voice generation model, which supports multiple languages, with fast and stable generation.
 
 ### 5. [OpenAvatarChat for Metax GPU Platform](./OpenAvatarChatForMetaX/README.md)
 - **[OpenAvatarChat](https://github.com/HumanAIGC-Engineering/OpenAvatarChat.git)** is a modular interactive virtual human dialogue implementation that can run full functionality on a single PC. Currently, it supports MiniCPM-o as a multimodal language model or can use cloud APIs to replace the standard ASR + LLM + TTS implementation.

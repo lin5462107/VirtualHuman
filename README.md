@@ -32,6 +32,10 @@ https://github.com/lin5462107/VirtualHuman/blob/main/imgs/lite_avartat_ori_video
   </tr>
 </table >
 
+https://github.com/user-attachments/assets/04bf5831-4bd4-4ea4-ac87-ac629f477256
+
+
+
 ### 2. [MuseTalk for Metax GPU Platform](./MuseTalkForMetaX/README.md) 
 - **[MuseTalk](https://github.com/TMElyralab/MuseTalk.git)** is a real-time high quality lip-syncing model, wich can be applied with input videos as a complete virtual human solution.
 

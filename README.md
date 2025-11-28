@@ -16,10 +16,10 @@ Currently, virtual humans are widely used in various industries, and the purpose
   </tr>
   <tr>
     <td >
-      <video src=https://github.com/user-attachments/assets/1cb0bc15-6d47-4e51-b3ae-9aa599ca4488 controls preload></video>
+      <video src=https://github.com/user-attachments/assets/daf02fcc-7c87-4f52-9dc9-a2ee0010d28e controls preload></video>
     </td>
     <td >
-      <video src=https://github.com/user-attachments/assets/b83f258e-5791-4a7d-a975-2ccc9a1a542f controls preload></video>
+      <video src=https://github.com/user-attachments/assets/0d14294a-cf67-4e97-bc8f-5aec7c6a7294 controls preload></video>
     </td>
   </tr>
 </table >
@@ -66,15 +66,13 @@ Currently, virtual humans are widely used in various industries, and the purpose
   </tr>
   <tr>
     <td >
-      <audio src= controls preload></audio>
+      <audio src=https://github.com/user-attachments/assets/67295d4c-6c9e-4d43-be94-0a2a4f613c82 controls preload></audio>
     </td>
     <td >
-      <audio src= controls preload></audio>
+      <audio src=https://github.com/user-attachments/assets/0d4f775e-a80f-4691-afa0-4a740b370a90 controls preload></audio>
     </td>
   </tr>
 </table >
-
-
 
 ### 5. [OpenAvatarChat for Metax GPU Platform](./OpenAvatarChatForMetaX/README.md)
 - **[OpenAvatarChat](https://github.com/HumanAIGC-Engineering/OpenAvatarChat.git)** is a modular interactive virtual human dialogue implementation that can run full functionality on a single PC. Currently, it supports MiniCPM-o as a multimodal language model or can use cloud APIs to replace the standard ASR + LLM + TTS implementation.

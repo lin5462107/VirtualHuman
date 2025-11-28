@@ -66,10 +66,10 @@ Currently, virtual humans are widely used in various industries, and the purpose
   </tr>
   <tr>
     <td >
-      <audio src=https://github.com/user-attachments/assets/67295d4c-6c9e-4d43-be94-0a2a4f613c82 controls preload></audio>
+      <video src=https://github.com/user-attachments/assets/67295d4c-6c9e-4d43-be94-0a2a4f613c82 controls preload></video>
     </td>
     <td >
-      <audio src=https://github.com/user-attachments/assets/0d4f775e-a80f-4691-afa0-4a740b370a90 controls preload></audio>
+      <video src=https://github.com/user-attachments/assets/0d4f775e-a80f-4691-afa0-4a740b370a90 controls preload></video>
     </td>
   </tr>
 </table >

@@ -8,39 +8,55 @@ Currently, virtual humans are widely used in various industries, and the purpose
 ## Available Projects
 ### 1. [LiteAvatar for Metax GPU platform](./LiteAvatarForMetaX/README.md)
 - **[LiteAvatar](https://github.com/HumanAIGC/lite-avatar.git)** is a audio2face model for realtime 2D chat avatar, which can run in 30fps on only CPU devices without GPU acceleration.
-https://github.com/lin5462107/VirtualHuman/blob/main/imgs/lite_avartat_ori_video.mp4
-<video controls>
-  <source src="https://github.com/lin5462107/VirtualHuman/blob/main/imgs/lite_avartat_ori_video.mp4" type="video/mp4">
-</video>
 
 <table class="center">
   <tr style="font-weight: bolder;text-align:center;">
-        <td width="33%">Image</td>
-        <td width="33%">MuseV</td>
-        <td width="33%">+MuseTalk</td>
+        <td width="50%">Input Video</td>
+        <td width="50%">Output Video</td>
   </tr>
   <tr>
-    <td>
-      <img src=assets/demo/musk/musk.png width="95%">
+    <td >
+      <video src=https://github.com/user-attachments/assets/1cb0bc15-6d47-4e51-b3ae-9aa599ca4488 controls preload></video>
     </td>
     <td >
-      <video src=https://github.com/lin5462107/VirtualHuman/blob/main/imgs/lite_avartat_ori_video.mp4 controls preload></video>
-    </td>
-    <td >
-      <video src=https://github.com/TMElyralab/MuseTalk/assets/163980830/b2a879c2-e23a-4d39-911d-51f0343218e4 controls preload></video>
+      <video src=https://github.com/user-attachments/assets/b83f258e-5791-4a7d-a975-2ccc9a1a542f controls preload></video>
     </td>
   </tr>
 </table >
 
-https://github.com/user-attachments/assets/04bf5831-4bd4-4ea4-ac87-ac629f477256
-
-
-
 ### 2. [MuseTalk for Metax GPU Platform](./MuseTalkForMetaX/README.md) 
 - **[MuseTalk](https://github.com/TMElyralab/MuseTalk.git)** is a real-time high quality lip-syncing model, wich can be applied with input videos as a complete virtual human solution.
 
+<table class="center">
+  <tr style="font-weight: bolder;text-align:center;">
+        <td width="50%">Input Video</td>
+        <td width="50%">Output Video</td>
+  </tr>
+  <tr>
+    <td >
+      <video src=https://github.com/user-attachments/assets/f057e683-3427-40ea-8099-af6f804709be controls preload></video>
+    </td>
+    <td >
+      <video src=https://github.com/user-attachments/assets/d7809e86-2b55-478f-8dc6-7cab51cf6ecc controls preload></video>
+    </td>
+  </tr>
+</table >
+
 ### 3. [MusePose for Metax GPU Platform](./MusePoseForMetaX/README.md) 
 - **[MusePose](https://github.com/TMElyralab/MusePose.git)** is an image-to-video generation framework for virtual human under control signal such as pose.
+
+<table class="center">
+  <tr style="font-weight: bolder;text-align:center;">
+        <td width="50%">Demo Video</td>
+  </tr>
+  <tr>
+    <td >
+      <video src= controls preload></video>
+    </td>
+  </tr>
+</table >
+
+
 
 ### 4. [CosyVoice for Metax GPU Platform](./CosyVoiceForMetaX/README.md)
 - **[CosyVoice](https://github.com/FunAudioLLM/CosyVoice.git)** is a powerful voice generation model, which supports multiple languages, with fast and stable generation.

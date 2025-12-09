@@ -12,8 +12,8 @@ Currently, virtual humans are widely used in various industries, and the purpose
 <table class="center">
   <tr style="font-weight: bolder;text-align:center;">
         <td width="33%">Product Image</td>
-        <td width="33%">Virtual Image</td>
-        <td width="33%">Virtual Video</td>
+        <td width="33%">VirtualHuman Image</td>
+        <td width="33%">VirtualHuman Video</td>
   </tr>
   <tr>
     <td >

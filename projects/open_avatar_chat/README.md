@@ -1,4 +1,4 @@
-# LiteAvatar for Metax GPU Platform
+# OpenAvatarChat for Metax GPU Platform
 
 ## About
 
@@ -61,44 +61,94 @@ RAM: >= 128GB
 #### Create python environment
 ``` shell
 # create conda environment
-conda create -n lite_avatar python=3.10
-conda activate lite_avatar
+conda create -n OpenAvatarChat python=3.10
+conda activate OpenAvatarChat
+cd open_avatar_chat
 ```
 
-#### Download PyTorch from MetaX Developer Center
+#### Download PyTorch, Tensorflow2, MMCV and ONNXRuntime from MetaX Developer Center
 **Note** Please download the version that matches the Driver, such as `2.33.x.x`.
 
 PyTorch: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=pytorch&ai_label=Pytorch)
 
+Tensorflow2: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=tensorflow2&ai_label=TensorFlow2)
+
+MMCV: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=mmcv&ai_label=MMCV)
+
+ONNXRuntime: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=onnxruntime&ai_label=ONNXRuntime)
+
 You will receive tar archives. After extracting them, navigate to the `wheel` directory and install using `pip`.
 ``` shell
-cd LiteAvatarForMetaX
 # install PyTorch
 tar -xvf maca-pytorch2.4-py310-2.33.0.6-x86_64.tar.xz
 cd 2.33.0.6/wheel/
 pip install ./*.whl
+
+# install Tensorflow2
+tar -xvf maca-tensorflow2-2.13.1-py310-3.2.1.5-linux-x86_64.tar.xz
+cd maca-tensorflow2-3.2.1.5/wheel/
+pip install ./*.whl
+
+# install MMCV
+# install mmengine
+pip install --no-cache-dir -U openmim
+mim install mmengine
+# install mmcv
+tar -xvf maca-mmcv-py310-3.1.0.5-linux-x86_64.tar.xz
+cd maca-mmcv-3.1.0.5
+pip install ./*.whl
+# install mmdet
+# if there is a version mismatch error in runtime, remove the checking version code.
+git clone https://github.com/open-mmlab/mmdetection.git -b v3.1.0 
+cd mmdetection 
+pip install -r requirements.txt
+pip install -e .  
+# install mmpose
+git clone https://github.com/open-mmlab/mmpose.git -b v1.2.0
+cd mmpose
+cp ../../third_party/mmpose/requirements/* ./requirements
+pip install -r requirements.txt
+pip install -e .  
+
+# install ONNXRuntime
+tar -xvf maca-onnxruntime-py310-3.1.0.5-linux-x86_64.tar.xz
+cd maca-onnxruntime-3.1.0.5/wheel/
+pip install ./*.whl
 ```
 
-#### Install Python Packages
+#### Install python packages
 ``` shell
 pip install -r requirements.txt
 ```
 
 #### Clone the Repo
 ``` shell
-git clone https://github.com/HumanAIGC/lite-avatar.git
+git clone https://github.com/HumanAIGC-Engineering/OpenAvatarChat.git
+cd OpenAvatarChat
+git submodule update --init --recursive --depth 1
 ```
 
-#### Model Preparation
-``` sh
-cd lite-avatar
-bash download_model.sh
+#### Download Weights
+``` shell
+# download LiteAvatar weights
+bash scripts/download_liteavatar_weights.sh
+
+# download LAM weights
+git clone --depth 1 https://www.modelscope.cn/AI-ModelScope/wav2vec2-base-960h.git ./models/wav2vec2-base-960h
+wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/data/LAM/LAM_audio2exp_streaming.tar -P ./models/LAM_audio2exp/
+tar -xzvf ./models/LAM_audio2exp/LAM_audio2exp_streaming.tar -C ./models/LAM_audio2exp && rm ./models/LAM_audio2exp/LAM_audio2exp_streaming.tar
+
+# download MuseTalk weights
+bash scripts/download_musetalk_weights.sh
+
+# download MiniCPM-o weights
+bash scripts/download_MiniCPM-o_2.6.sh
 ```
 
 #### Inference
-``` sh
-python lite_avatar.py --data_dir /path/to/sample_data --audio_file /path/to/audio.wav --result_dir /path/to/result
+``` shell
+python src/demo.py --config ./config/chat_with_minicpm.yaml
 ```
 
 ## Other References
-Follow [lite-avatar](https://github.com/HumanAIGC/lite-avatar.git).
+Follow [OpenAvatarChat](https://github.com/HumanAIGC-Engineering/OpenAvatarChat.git).

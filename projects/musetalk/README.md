@@ -1,4 +1,4 @@
-# MusePose for Metax GPU Platform
+# MuseTalk for Metax GPU Platform
 
 ## About
 
@@ -61,9 +61,9 @@ RAM: >= 128GB
 #### Create python environment
 ``` shell
 # create conda environment
-conda create -n MusePose python=3.10
-conda activate MusePose
-cd ./MusePoseForMetaX
+conda create -n MuseTalk python=3.10
+conda activate MuseTalk
+cd ./musetalk
 ```
 
 #### Download PyTorch, Tensorflow2 and MMCV from MetaX Developer Center
@@ -111,25 +111,34 @@ pip install -e .
 
 #### Install python packages
 ``` shell
+cd ./MuseTalk
 pip install -r requirements.txt
+```
+
+#### Setup FFmpeg
+```bash
+sudo apt-get install ffmpeg
 ```
 
 #### Clone the Repo
 ``` shell
-git clone https://github.com/TMElyralab/MusePose.git
-cd MusePose
+git clone https://github.com/TMElyralab/MuseTalk.git
+cd MuseTalk
 ```
 
 #### Download Weights
 ``` shell
-python downloading_weights.py
+sh ./download_weights.sh
 ```
 
 #### Inference
 ``` shell
-python pose_align.py --imgfn_refer ./assets/images/ref.png --vidfn ./assets/videos/dance.mp4
-python test_stage_2.py --config ./configs/test_stage_2.yaml
+# MuseTalk 1.5 (Recommended)
+sh inference.sh v1.5 normal
+
+# MuseTalk 1.0
+sh inference.sh v1.0 normal
 ``` 
 
 ## Other References
-Follow [MusePose](https://github.com/TMElyralab/MusePose.git).
+Follow [MuseTalk](https://github.com/TMElyralab/MuseTalk.git).

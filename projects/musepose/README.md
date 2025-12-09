@@ -1,4 +1,4 @@
-# OpenAvatarChat for Metax GPU Platform
+# MusePose for Metax GPU Platform
 
 ## About
 
@@ -61,12 +61,12 @@ RAM: >= 128GB
 #### Create python environment
 ``` shell
 # create conda environment
-conda create -n OpenAvatarChat python=3.10
-conda activate OpenAvatarChat
-cd OpenAvatarChatForMetaX
+conda create -n MusePose python=3.10
+conda activate MusePose
+cd ./musepose
 ```
 
-#### Download PyTorch, Tensorflow2, MMCV and ONNXRuntime from MetaX Developer Center
+#### Download PyTorch, Tensorflow2 and MMCV from MetaX Developer Center
 **Note** Please download the version that matches the Driver, such as `2.33.x.x`.
 
 PyTorch: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=pytorch&ai_label=Pytorch)
@@ -107,11 +107,6 @@ cd mmpose
 cp ../../third_party/mmpose/requirements/* ./requirements
 pip install -r requirements.txt
 pip install -e .  
-
-# install ONNXRuntime
-tar -xvf maca-onnxruntime-py310-3.1.0.5-linux-x86_64.tar.xz
-cd maca-onnxruntime-3.1.0.5/wheel/
-pip install ./*.whl
 ```
 
 #### Install python packages
@@ -121,32 +116,20 @@ pip install -r requirements.txt
 
 #### Clone the Repo
 ``` shell
-git clone https://github.com/HumanAIGC-Engineering/OpenAvatarChat.git
-cd OpenAvatarChat
-git submodule update --init --recursive --depth 1
+git clone https://github.com/TMElyralab/MusePose.git
+cd MusePose
 ```
 
 #### Download Weights
 ``` shell
-# download LiteAvatar weights
-bash scripts/download_liteavatar_weights.sh
-
-# download LAM weights
-git clone --depth 1 https://www.modelscope.cn/AI-ModelScope/wav2vec2-base-960h.git ./models/wav2vec2-base-960h
-wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/data/LAM/LAM_audio2exp_streaming.tar -P ./models/LAM_audio2exp/
-tar -xzvf ./models/LAM_audio2exp/LAM_audio2exp_streaming.tar -C ./models/LAM_audio2exp && rm ./models/LAM_audio2exp/LAM_audio2exp_streaming.tar
-
-# download MuseTalk weights
-bash scripts/download_musetalk_weights.sh
-
-# download MiniCPM-o weights
-bash scripts/download_MiniCPM-o_2.6.sh
+python downloading_weights.py
 ```
 
 #### Inference
 ``` shell
-python src/demo.py --config ./config/chat_with_minicpm.yaml
-```
+python pose_align.py --imgfn_refer ./assets/images/ref.png --vidfn ./assets/videos/dance.mp4
+python test_stage_2.py --config ./configs/test_stage_2.yaml
+``` 
 
 ## Other References
-Follow [OpenAvatarChat](https://github.com/HumanAIGC-Engineering/OpenAvatarChat.git).
+Follow [MusePose](https://github.com/TMElyralab/MusePose.git).

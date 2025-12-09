@@ -1,4 +1,4 @@
-# MuseTalk for Metax GPU Platform
+# CosyVoice for Metax GPU Platform
 
 ## About
 
@@ -61,19 +61,18 @@ RAM: >= 128GB
 #### Create python environment
 ``` shell
 # create conda environment
-conda create -n MuseTalk python=3.10
-conda activate MuseTalk
-cd ./MuseTalkForMetaX
+conda create -n CosyVoice python=3.10
+conda activate CosyVoice
+cd ./cosyvoice
 ```
 
-#### Download PyTorch, Tensorflow2 and MMCV from MetaX Developer Center
+#### Download PyTorch and ONNXRuntime from MetaX Developer Center
 **Note** Please download the version that matches the Driver, such as `2.33.x.x`.
 
 PyTorch: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=pytorch&ai_label=Pytorch)
 
-Tensorflow2: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=tensorflow2&ai_label=TensorFlow2)
+ONNXRuntime: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=onnxruntime&ai_label=ONNXRuntime)
 
-MMCV: [link](https://developer.metax-tech.com/softnova/category?package_kind=AI&dimension=metax&chip_name=%E6%9B%A6%E4%BA%91C500%E7%B3%BB%E5%88%97&deliver_type=%E5%88%86%E5%B1%82%E5%8C%85&ai_frame=mmcv&ai_label=MMCV)
 
 You will receive tar archives. After extracting them, navigate to the `wheel` directory and install using `pip`.
 ``` shell
@@ -82,63 +81,69 @@ tar -xvf maca-pytorch2.4-py310-2.33.0.6-x86_64.tar.xz
 cd 2.33.0.6/wheel/
 pip install ./*.whl
 
-# install Tensorflow2
-tar -xvf maca-tensorflow2-2.13.1-py310-3.2.1.5-linux-x86_64.tar.xz
-cd maca-tensorflow2-3.2.1.5/wheel/
+# install ONNXRuntime
+tar -xvf maca-onnxruntime-py310-3.1.0.5-linux-x86_64.tar.xz
+cd maca-onnxruntime-3.1.0.5/wheel/
 pip install ./*.whl
 
-# install MMCV
-# install mmengine
-pip install --no-cache-dir -U openmim
-mim install mmengine
-# install mmcv
-tar -xvf maca-mmcv-py310-3.1.0.5-linux-x86_64.tar.xz
-cd maca-mmcv-3.1.0.5
-pip install ./*.whl
-# install mmdet
-# if there is a version mismatch error in runtime, remove the checking version code.
-git clone https://github.com/open-mmlab/mmdetection.git -b v3.1.0 
-cd mmdetection 
-pip install -r requirements.txt
-pip install -e .  
-# install mmpose
-git clone https://github.com/open-mmlab/mmpose.git -b v1.2.0
-cd mmpose
-cp ../../third_party/mmpose/requirements/* ./requirements
-pip install -r requirements.txt
-pip install -e .  
 ```
 
-#### Install python packages
+#### Install Python Packages
 ``` shell
-cd ./MuseTalk
 pip install -r requirements.txt
-```
-
-#### Setup FFmpeg
-```bash
-sudo apt-get install ffmpeg
+sudo apt-get install sox libsox-dev
 ```
 
 #### Clone the Repo
 ``` shell
-git clone https://github.com/TMElyralab/MuseTalk.git
-cd MuseTalk
+git clone --recursive https://github.com/FunAudioLLM/CosyVoice.git
+# If you failed to clone the submodule due to network failures, please run the following command until success
+cd CosyVoice
+git submodule update --init --recursive
 ```
 
-#### Download Weights
-``` shell
-sh ./download_weights.sh
+#### Model Download
+``` python
+# SDK model download
+from modelscope import snapshot_download
+snapshot_download('iic/CosyVoice2-0.5B', local_dir='pretrained_models/CosyVoice2-0.5B')
+snapshot_download('iic/CosyVoice-300M', local_dir='pretrained_models/CosyVoice-300M')
+snapshot_download('iic/CosyVoice-300M-SFT', local_dir='pretrained_models/CosyVoice-300M-SFT')
+snapshot_download('iic/CosyVoice-300M-Instruct', local_dir='pretrained_models/CosyVoice-300M-Instruct')
+snapshot_download('iic/CosyVoice-ttsfrd', local_dir='pretrained_models/CosyVoice-ttsfrd')
 ```
 
-#### Inference
-``` shell
-# MuseTalk 1.5 (Recommended)
-sh inference.sh v1.5 normal
+``` sh
+# Git model download, please make sure Git LFS is installed
+mkdir -p pretrained_models
+git clone https://www.modelscope.cn/iic/CosyVoice2-0.5B.git pretrained_models/CosyVoice2-0.5B
+git clone https://www.modelscope.cn/iic/CosyVoice-300M.git pretrained_models/CosyVoice-300M
+git clone https://www.modelscope.cn/iic/CosyVoice-300M-SFT.git pretrained_models/CosyVoice-300M-SFT
+git clone https://www.modelscope.cn/iic/CosyVoice-300M-Instruct.git pretrained_models/CosyVoice-300M-Instruct
+git clone https://www.modelscope.cn/iic/CosyVoice-ttsfrd.git pretrained_models/CosyVoice-ttsfrd
+```
 
-# MuseTalk 1.0
-sh inference.sh v1.0 normal
-``` 
+Optionally, you can unzip `ttsfrd` resource and install `ttsfrd` package for better text normalization performance.
+
+Notice that this step is not necessary. If you do not install `ttsfrd` package, we will use wetext by default.
+
+``` sh
+cd pretrained_models/CosyVoice-ttsfrd/
+unzip resource.zip -d .
+pip install ttsfrd_dependency-0.1-py3-none-any.whl
+pip install ttsfrd-0.4.2-cp310-cp310-linux_x86_64.whl
+```
+
+#### Start web demo
+
+You can use our web demo page to get familiar with CosyVoice quickly.
+
+Please see the demo website for details.
+
+``` python
+# change iic/CosyVoice-300M-SFT for sft inference, or iic/CosyVoice-300M-Instruct for instruct inference
+python3 webui.py --port 50000 --model_dir pretrained_models/CosyVoice-300M
+```
 
 ## Other References
-Follow [MuseTalk](https://github.com/TMElyralab/MuseTalk.git).
+Follow [CosyVoice](https://github.com/FunAudioLLM/CosyVoice.git).

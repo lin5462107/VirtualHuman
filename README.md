@@ -9,8 +9,42 @@ Currently, virtual humans are widely used in various industries, and the purpose
 ### 1. [Wan2.2-S2V for Metax GPU platform](./wan22_s2v/README.md)
 - **[Wan2.2-S2V](https://github.com/Wan-Video/Wan2.2.git)** is an audio-driven cinematic video generation model.
 
+<table class="center">
+  <tr style="font-weight: bolder;text-align:center;">
+        <td width="33%">Product Image</td>
+        <td width="33%">Virtual Image</td>
+        <td width="33%">Virtual Video</td>
+  </tr>
+  <tr>
+    <td >
+      <img src=./imgs/product_image.png></img>
+    </td>
+    <td >
+      <img src=./imgs/virtual_image.png></img>
+    </td>
+    <td >
+      <video src=https://github.com/user-attachments/assets/23921ab8-6413-44d0-80e9-f701015b097c controls preload></video>
+    </td>
+  </tr>
+</table >
+
 ### 2. [LatentSync for Metax GPU platform](./latentsync/README.md)
 - **[LatentSync](https://github.com/bytedance/LatentSync.git)** is an end-to-end lip-sync method based on audio-conditioned latent diffusion models without any intermediate motion representation, diverging from previous diffusion-based lip-sync methods based on pixel-space diffusion or two-stage generation.
+
+<table class="center">
+  <tr style="font-weight: bolder;text-align:center;">
+        <td width="50%">Original Video</td>
+        <td width="50%">Translated Video</td>
+  </tr>
+  <tr>
+    <td >
+      <video src=https://github.com/user-attachments/assets/2828839e-f1e6-4486-ac3b-dcf318686f4f controls preload></video>
+    </td>
+    <td >
+      <video src=https://github.com/user-attachments/assets/3b2bbe80-2b8c-4902-87f1-634ee1d5c0af controls preload></video>
+    </td>
+  </tr>
+</table >
 
 ### 3. [CosyVoice for Metax GPU Platform](./cosyvoice/README.md)
 - **[CosyVoice](https://github.com/FunAudioLLM/CosyVoice.git)** is a powerful voice generation model, which supports multiple languages, with fast and stable generation.
